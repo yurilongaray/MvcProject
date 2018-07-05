@@ -18,10 +18,13 @@ namespace MvcProject.Controllers {
             return View( db.listaCursos.ToList() );
         }
 
-		public IActionResult Detalhe() {
+		public IActionResult Detalhe(int id) {
+			var curso = db.GetCurso(id);
+			if (curso == null) {
+				// TODO: Adicionar erro no model
+			}
 
-			return View();
-
+			return View(curso);
 		}
 
 		public IActionResult Inscrever(int id) {

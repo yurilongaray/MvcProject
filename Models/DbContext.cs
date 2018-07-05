@@ -94,6 +94,11 @@ namespace MvcProject.Models {
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/0OIv-s4MSx0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		}
 
+		public CursoModel GetCurso(int id)
+		{
+			return this.listaCursos.FirstOrDefault(curso => curso.id == id);
+		}
+
 		public CursoModel getUsuario(int id) {
 			return listaCursos.SingleOrDefault(e => e.id == id);
 		}
