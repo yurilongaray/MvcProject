@@ -1,4 +1,5 @@
 using System;
+using MvcProject.Models;
 
 namespace MvcProject.Models
 {

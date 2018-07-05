@@ -14,6 +14,7 @@ namespace MvcProject.Models {
 		public Cursos() {
 
 			listaCursos.Add( new CursoModel {
+				id			  = 1,
 				nome 		  = "Gastronomia",
 				cargaHoraria  = "300 hrs",
 				segunda 	  = true,
@@ -29,6 +30,7 @@ namespace MvcProject.Models {
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/m6QM_IPlK-I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 			listaCursos.Add( new CursoModel {
+				id			  = 2,
 				nome 		  = "Enfermagem",
 				cargaHoraria  = "300 hrs",
 				segunda 	  = true,
@@ -44,14 +46,15 @@ namespace MvcProject.Models {
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/sDF0K8Mhz4Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 			listaCursos.Add( new CursoModel {
+				id			  = 3,
 				nome 		  = "Farmácia",
 				cargaHoraria  = "300 hrs",
-				segunda 	  = true,
-				terca		  = true,
-				quarta		  = true,
-				quinta		  = true,
+				segunda 	  = false,
+				terca		  = false,
+				quarta		  = false,
+				quinta		  = false,
 				sexta 		  = true,
-				sabado		  = false,
+				sabado		  = true,
 				dataInicio 	  = Convert.ToDateTime("01/07/2018"),
 				caminhoImagem = "../images/farmacia.jpg",
 				caminhoVideo  = "https://www.youtube.com/embed/wsgRiJw1JJM"
@@ -59,11 +62,12 @@ namespace MvcProject.Models {
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/wsgRiJw1JJM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 			listaCursos.Add( new CursoModel {
+				id			  = 4,
 				nome 		  = "Desenvolvimento de Software",
 				cargaHoraria  = "300 hrs",
-				segunda 	  = true,
-				terca		  = true,
-				quarta		  = true,
+				segunda 	  = false,
+				terca		  = false,
+				quarta		  = false,
 				quinta		  = true,
 				sexta 		  = true,
 				sabado		  = false,
@@ -74,10 +78,11 @@ namespace MvcProject.Models {
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/3Smbhnmue7Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 			listaCursos.Add( new CursoModel {
+				id			  = 5,
 				nome 		  = "Administração",
 				cargaHoraria  = "300 hrs",
-				segunda 	  = true,
-				terca		  = true,
+				segunda 	  = false,
+				terca		  = false,
 				quarta		  = true,
 				quinta		  = true,
 				sexta 		  = true,
@@ -87,6 +92,10 @@ namespace MvcProject.Models {
 				caminhoVideo  = "https://www.youtube.com/embed/0OIv-s4MSx0"
 			});
 			//<iframe width="560" height="315" src="https://www.youtube.com/embed/0OIv-s4MSx0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		}
+
+		public CursoModel getUsuario(int id) {
+			return listaCursos.SingleOrDefault(e => e.id == id);
 		}
 
 	}

@@ -4,34 +4,41 @@
     ViewData["Title"] = "Cursos";
 }
 
-<h2>Cursos</h2>
-
-<ul>
-	@foreach(var item in Model) {
-		<li>@Html.DisplayFor(modelItem => item.nome)</li>
-	}
-</ul>
 
 <h1>Tabela de Cursos</h1>
 <table>
 	<tr>
+		<th>Id</th>
 		<th>Nome</th>
 		<th>Carga Horaria</th>
 		<th>Caminho Imagem</th>
 		<th>Caminho Vídeo</th>
 		<th>Data Início</th>
-		<th>Sábados</th>
+		<th>Detalhes</th>
 	</tr>
-	@foreach(var item in Model) {
+	@foreach(var curso in Model) {
 		<tr>
-			<td>@Html.DisplayFor(modelItem => item.nome)</td>
-			<td>@Html.DisplayFor(modelItem => item.caminhoImagem)</td>
-			<td>@Html.DisplayFor(modelItem => item.caminhoVideo)</td>
-			<td>@Html.DisplayFor(modelItem => item.dataInicio)</td>
-			<td>@Html.DisplayFor(modelItem => item.sabado)</td>
+			<td>@curso.id</td>
+			<td><a href="/curso/detalhe/@curso.id">@curso.nome</a></td>
+			<td>@curso.cargaHoraria</td>
+			<td>@curso.caminhoImagem</td>
+			<td>@curso.caminhoVideo</td>
+			<td>@Html.DisplayFor(cursoItem => curso.dataInicio)</td>
+			<td>@Html.ActionLink("Detalhes", "Detalhe", new { id = @curso.id })</td>
 		</tr>
 	}
 
 </table>
-
+<div class="row">
+<div class="col-md-4">
+	<div class="intro-table intro-table-hover">
+		<h5 class="white heading hide-hover">Premium Membership</h5>
+		<div class="bottom">
+			<h4 class="white heading small-heading no-margin regular">Register Today</h4>
+			<h4 class="white heading small-pt">20% Discount</h4>
+			<a href="#" class="btn btn-white-fill expand">Register</a>
+		</div>
+	</div>
+</div>
+</div>
 <!-- <iframe width="853" height="480" src="https://youtube.com/embed/u548qyxRTBU" frameborder="0" allowfullscreen></iframe> -->

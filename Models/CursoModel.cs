@@ -9,6 +9,7 @@ namespace MvcProject.Models {
 
 	public class CursoModel {
 
+		public int id 				{ get; set; }
 		public string nome 			{ get; set; }
 		public string cargaHoraria  { get; set; }
 		public string caminhoImagem { get; set; }
