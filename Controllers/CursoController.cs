@@ -11,9 +11,11 @@ namespace MvcProject.Controllers {
 
     public class CursoController : Controller {
 
+		private static Cursos _cursos = new Cursos();
+
 		public IActionResult Index()
         {
-            return View();
+            return View( _cursos.listaCursos );
         }
 
 	}

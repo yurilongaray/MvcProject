@@ -1,3 +1,37 @@
+@model IEnumerable<MvcProject.Models.CursoModel>
+
 @{
     ViewData["Title"] = "Cursos";
 }
+
+<h2>Cursos</h2>
+
+<ul>
+	@foreach(var item in Model) {
+		<li>@Html.DisplayFor(modelItem => item.nome)</li>
+	}
+</ul>
+
+<h1>Tabela de Cursos</h1>
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Carga Horaria</th>
+		<th>Caminho Imagem</th>
+		<th>Caminho Vídeo</th>
+		<th>Data Início</th>
+		<th>Sábados</th>
+	</tr>
+	@foreach(var item in Model) {
+		<tr>
+			<td>@Html.DisplayFor(modelItem => item.nome)</td>
+			<td>@Html.DisplayFor(modelItem => item.caminhoImagem)</td>
+			<td>@Html.DisplayFor(modelItem => item.caminhoVideo)</td>
+			<td>@Html.DisplayFor(modelItem => item.dataInicio)</td>
+			<td>@Html.DisplayFor(modelItem => item.sabado)</td>
+		</tr>
+	}
+
+</table>
+
+<!-- <iframe width="853" height="480" src="https://youtube.com/embed/u548qyxRTBU" frameborder="0" allowfullscreen></iframe> -->
