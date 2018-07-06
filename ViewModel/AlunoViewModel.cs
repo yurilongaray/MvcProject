@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using MvcProject.Models;
 
-namespace MvcProject.Models {
+namespace MvcProject.Models
+{
 
-	public class AlunoViewModel {
+	public class AlunoViewModel
+	{
 
 		public AlunoModel Aluno { get; set; }
     	public List<CursoModel> Curso { get; set; }
