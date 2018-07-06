@@ -32,9 +32,15 @@ namespace MvcProject.Controllers
 			return View(curso);
 		}
 
-		public IActionResult Inscrever(string curso)
+		public IActionResult Inscrever(AlunoModel aluno)
 		{
-
+			if (ModelState.IsValid)
+			{
+				// busca na base se o aluno ja ta em algum curso
+				// se tiver
+				ModelState.AddModelError("", "ALUNO JA INSCRITO EM ALGUM CURSO")
+				// senao, faz o que tem que fazer
+			}
 			return View(curso);
 		}
 

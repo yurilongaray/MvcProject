@@ -12,8 +12,10 @@ namespace MvcProject.Models
 	public class AlunoViewModel
 	{
 
-		public AlunoModel Aluno { get; set; }
-    	public List<CursoModel> Curso { get; set; }
+		// id aluno
+		// id curso
 
 	}
 }
+
+//Pegar va
