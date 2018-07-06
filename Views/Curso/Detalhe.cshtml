@@ -1,11 +1,53 @@
 @model MvcProject.Models.CursoModel
 
 @{
-     ViewData["Title"] = "Detalhe";
+    ViewData["Title"] = "Detalhes do Curso";
 }
 
-<h2>Detalhes do Curso</h2>
+<div >
+	<h2>Detalhes do Curso de @Model.Nome</h2>
 
-<b>@Model.nome</b>
-@Model.id
+	<div class="row">
+		<div class="col-md-6">
+			<label>Descrição: </label>
+			<p>@Model.Descricao</p>
+			<label>Carga Horária: </label>
+			<p>@Model.CargaHoraria</p>
+			<label>Data de Início: </label>
+			<p>@Model.DataInicio</p>
+		</div>
+		<div class="col-md-6">
+			<iframe width="100%" height="300px" src="@Model.CaminhoVideo" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<div>
+		<label>Dias da Semana:</label>
+		<table class="table table-responsive" id="formato-tabela">
+			<thead>
+				<tr>
+					<th>Domingo</th>
+					<th>Segunda</th>
+					<th>Terça</th>
+					<th>Quarta</th>
+					<th>Quinta</th>
+					<th>Sexta</th>
+					<th>Sábado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Teste</td>
+					<td>Doe</td>
+					<td>joSS</td>
+					<td>Teste</td>
+					<td>Doe</td>
+					<td>Teste</td>
+					<td>Doe</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button type="button" class="btn btn-success" data-toggle="modal" >Inscrever</button>
+</div>
 

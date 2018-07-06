@@ -17,3 +17,8 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+#formato-tabela {
+	width: 100px;
+	text-align: center;
+}

@@ -18,13 +18,13 @@
 	</tr>
 	@foreach(var curso in Model) {
 		<tr>
-			<td>@curso.id</td>
-			<td><a href="/curso/detalhe/@curso.id">@curso.nome</a></td>
-			<td>@curso.cargaHoraria</td>
-			<td>@curso.caminhoImagem</td>
-			<td>@curso.caminhoVideo</td>
-			<td>@Html.DisplayFor(cursoItem => curso.dataInicio)</td>
-			<td>@Html.ActionLink("Detalhes", "Detalhe", new { id = @curso.id })</td>
+			<td>@curso.Id</td>
+			<td>@curso.Nome</td>
+			<td>@curso.CargaHoraria</td>
+			<td>@curso.CaminhoImagem</td>
+			<td>@curso.CaminhoVideo</td>
+			<td>@Html.DisplayFor(cursoItem => curso.DataInicio)</td>
+			<td>@Html.ActionLink("Detalhes", "Detalhe", new { id = @curso.Id })</td>
 		</tr>
 	}
 

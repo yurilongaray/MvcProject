@@ -9,22 +9,23 @@ namespace MvcProject.Models {
 
 	public class CursoModel {
 
-		public int id 				{ get; set; }
-		public string nome 			{ get; set; }
-		public string cargaHoraria  { get; set; }
-		public string caminhoImagem { get; set; }
-		public string caminhoVideo  { get; set; }
+		public int Id 				{ get; set; }
+		public string Nome 			{ get; set; }
+		public string Descricao		{ get; set; }
+		public string CargaHoraria  { get; set; }
+		public string CaminhoImagem { get; set; }
+		public string CaminhoVideo  { get; set; }
 
 		//Dias da semana
-		public bool segunda { get; set; }
-		public bool terca   { get; set; }
-		public bool quarta  { get; set; }
-		public bool quinta  { get; set; }
-		public bool sexta   { get; set; }
-		public bool sabado  { get; set; }
+		public bool Segunda { get; set; }
+		public bool Terca   { get; set; }
+		public bool Quarta  { get; set; }
+		public bool Quinta  { get; set; }
+		public bool Sexta   { get; set; }
+		public bool Sabado  { get; set; }
 
 		[DataType(DataType.Date)]
-		public DateTime dataInicio { get; set; }
+		public DateTime DataInicio { get; set; }
 
 	}
 
