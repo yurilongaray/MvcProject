@@ -22,3 +22,19 @@ body {
 	width: 100px;
 	text-align: center;
 }
+
+#botao-salvar {
+	float: right;
+}
+
+#botao-fechar {
+	float: left;
+}
+
+#form-modal {
+	color: black;
+}
+
+.modal-content {
+ 	background-color: #d6d6d6;
+}

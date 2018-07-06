@@ -5,9 +5,11 @@ using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MvcProject.Models {
+namespace MvcProject.Models
+{
 
-	public class Cursos {
+	public class Cursos
+	{
 
 		public List<CursoModel> listaCursos = new List<CursoModel>();
 

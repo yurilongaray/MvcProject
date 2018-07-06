@@ -8,28 +8,34 @@ using System.Text.Encodings.Web;
 
 using MvcProject.Models;
 
-namespace MvcProject.Controllers {
+namespace MvcProject.Controllers
+{
 
-    public class CursoController : Controller {
+    public class CursoController : Controller
+	{
 
 		private static Cursos db = new Cursos();
 
-		public IActionResult Index() {
+		public IActionResult Index()
+		{
             return View( db.listaCursos.ToList() );
         }
 
-		public IActionResult Detalhe(int id) {
+		public IActionResult Detalhe(int id)
+		{
 			var curso = db.GetCurso(id);
-			if (curso == null) {
+			if (curso == null)
+			{
 				// TODO: Adicionar erro no model
 			}
 
 			return View(curso);
 		}
 
-		public IActionResult Inscrever(int id) {
+		public IActionResult Inscrever(string curso)
+		{
 
-			return View(id);
+			return View(curso);
 		}
 
 	}

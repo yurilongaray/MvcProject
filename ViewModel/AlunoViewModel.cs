@@ -8,7 +8,10 @@ using MvcProject.Models;
 
 namespace MvcProject.Models {
 
-	public class VMEditCreateCurso {
-		public int id { get; set; }
+	public class AlunoViewModel {
+
+		public AlunoModel Aluno { get; set; }
+    	public List<CursoModel> Curso { get; set; }
+
 	}
 }

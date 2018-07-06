@@ -5,9 +5,11 @@ using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MvcProject.Models {
+namespace MvcProject.Models
+{
 
-	public class CursoModel {
+	public class CursoModel
+	{
 
 		public int Id 				{ get; set; }
 		public string Nome 			{ get; set; }
