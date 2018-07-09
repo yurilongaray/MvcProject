@@ -5,7 +5,7 @@
 }
 
 <div >
-	<h2>Detalhes do Curso de @Model.Nome</h2>
+	<h2>Curso de @Model.Nome de @ViewData["Inicio"]</h2>
 
 	<div class="row">
 		<div class="col-md-6">
@@ -38,17 +38,20 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>Teste</td>
-					<td>Doe</td>
-					<td>joSS</td>
-					<td>Teste</td>
-					<td>Doe</td>
-					<td>Teste</td>
-					<td>Doe</td>
+					<td>@ViewData["Domingo"]</td>
+					<td>@ViewData["Segunda"]</td>
+					<td>@ViewData["Terca"]</td>
+					<td>@ViewData["Quarta"]</td>
+					<td>@ViewData["Quinta"]</td>
+					<td>@ViewData["Sexta"]</td>
+					<td>@ViewData["Sabado"]</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<button type="button" class="btn btn-success" >@Html.ActionLink("Realizar Inscrição", "Inscrever", new { id = @Model.Id })</button>
+
+	<a href="/curso/index"><button type="button" class="btn btn-warning">Retornar</button></a>
+	<a href="/curso/inscrever/@Model.Id"><button type="button" class="btn btn-success" >Inscrição</button></a>
+
 </div>
 

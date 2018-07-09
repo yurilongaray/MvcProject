@@ -5,7 +5,9 @@
 }
 
 
-<h1>Tabela de Cursos</h1>
+<h1>Cursos Disponíveis</h1>
+
+<!--
 <table>
 	<tr>
 		<th>Id</th>
@@ -25,20 +27,24 @@
 			<td>@curso.CaminhoVideo</td>
 			<td>@Html.DisplayFor(cursoItem => curso.DataInicio)</td>
 			<td>@Html.ActionLink("Detalhes", "Detalhe", new { id = @curso.Id })</td>
+			<td><a href="/curso/detalhe/@curso.Id">teste</a></td>
 		</tr>
 	}
-
 </table>
+-->
 <div class="row">
-<div class="col-md-4">
-	<div class="intro-table intro-table-hover">
-		<h5 class="white heading hide-hover">Premium Membership</h5>
-		<div class="bottom">
-			<h4 class="white heading small-heading no-margin regular">Register Today</h4>
-			<h4 class="white heading small-pt">20% Discount</h4>
-			<a href="#" class="btn btn-white-fill expand">Register</a>
+	@foreach(var curso in Model)
+	{
+		<div class="col-md-4 curso-box">
+			<h4>@curso.Nome</h4>
+			<img class = "imagem-curso" src="@curso.CaminhoImagem"/>
+			<div class="col-md-12 botoes-cursos">
+				<a href="/curso/detalhe/@curso.Id"><button type="button" class="btn btn-light">Detalhes</button></a>
+				<a href="/curso/inscrever/@curso.Id"><button type="button" class="btn btn-info">Inscrição</button></a>
+			</div>
 		</div>
-	</div>
+	}
 </div>
-</div>
+
+
 <!-- <iframe width="853" height="480" src="https://youtube.com/embed/u548qyxRTBU" frameborder="0" allowfullscreen></iframe> -->

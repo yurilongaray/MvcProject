@@ -38,3 +38,22 @@ body {
 .modal-content {
  	background-color: #d6d6d6;
 }
+
+a.none {
+    text-decoration: none;
+}
+
+.imagem-curso {
+	width: 200px;
+	height: 90px;
+	border-radius: 10px;
+}
+
+.botoes-cursos {
+	margin-top: 10px;
+}
+
+.curso-box {
+	margin-top: 20px;
+	text-align: center;
+}

@@ -12,7 +12,8 @@ namespace MvcProject.ViewModels
 	public class AlunoCursoVM
 	{
 		public AlunoModel Aluno { get; set; }
-		public CursoModel Curso	{ get; set; }
+
+		public int IdCurso		{ get; set; }
 		public string NomeCurso { get; set; }
 
 		/*

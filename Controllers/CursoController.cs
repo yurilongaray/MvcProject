@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
+using System.IO;
 
 using MvcProject.Models;
 using MvcProject.ViewModels;
@@ -28,7 +29,35 @@ namespace MvcProject.Controllers
 			var curso = dbcursos.GetCurso(id);
 			if (curso == null)
 			{
-				// TODO: Adicionar erro no model
+				return RedirectToAction("Index");
+			}
+
+			var inicio = curso.DataInicio.Year;
+
+			ViewData["Inicio"] = inicio;
+
+			if (curso.Segunda == true){
+				ViewData["Segunda"] = "X";
+			}
+
+			if (curso.Terca == true){
+				ViewData["Terca"] = "X";
+			}
+
+			if (curso.Quarta == true){
+				ViewData["Quarta"] = "X";
+			}
+
+			if (curso.Quinta == true){
+				ViewData["Quinta"] = "X";
+			}
+
+			if (curso.Sexta == true){
+				ViewData["Sexta"] = "X";
+			}
+
+			if (curso.Sabado == true){
+				ViewData["Sabado"] = "X";
 			}
 
 			//Retorna um model:
@@ -43,48 +72,47 @@ namespace MvcProject.Controllers
 
 			if (curso == null)
 			{
-				// TODO: Adicionar erro no model
+				return RedirectToAction("Index");
 			}
-
-			/*
-			// converte o model pra view model
-			var vm = new AlunoCursoVM();
-			{
-				Nome = curso.Nome
-			}
-			*/
 
 			var vm = new AlunoCursoVM();
 
+			vm.IdCurso	 = curso.Id;
 			vm.NomeCurso = curso.Nome;
 			return View(vm);
 		}
 
-		/*
+
 		[HttpPost]
 		public IActionResult Inscrever(AlunoCursoVM vm)
 		{
-			if (ModelState.IsValid) {
-
+			if (ModelState.IsValid)
+			{
 				AlunoModel aluno = vm.Aluno;
 
-				aluno.Curso = dbcursos.listaCursos.Where(m => m.Id == aluno.Curso.Id.FirstOrDefault());
+				var anoNascimento = aluno.DataNascimento.Year;
+				var anoAtual	  = DateTime.Now.Year;
+				var totalIdade 	  = anoAtual - anoNascimento;
+
+				if (totalIdade < 18 )
+				{
+					ViewData["ErroNascimento"] = "O aluno precisa ser maior de 18 anos";
+					return View(vm);
+				}
 
 				//Adiciona o aluno no banco
-                dbalunos.Alunos.Add(aluno);
-
-                //Salva as informações no banco
-                dbalunos.SaveChanges();
-
-				this.FlashInfo(aluno.Nome + ", Você for matriculado com sucesso.");
+                dbalunos.listaAlunos.Add(aluno);
 
                 //Retorna para a página Index
                 return RedirectToAction("Index");
 
+			} else
+			{
+				return View(vm);
 			}
 
 		}
-		*/
+
 
 	}
 
