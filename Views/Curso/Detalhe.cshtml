@@ -49,28 +49,6 @@
 			</tbody>
 		</table>
 	</div>
-	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#form-modal" >Inscrever</button>
+	<button type="button" class="btn btn-success" >@Html.ActionLink("Realizar Inscrição", "Inscrever", new { id = @Model.Id })</button>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="form-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-		<h4 class="modal-title">Título da mensagem</h4>
-      </div>
-      <div class="modal-body">
-        @using (Html.BeginForm()) {
-		}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal" id="botao-fechar">Fechar</button>
-        <button type="button" class="btn btn-primary" id="botao-salvar">Salvar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div>
 

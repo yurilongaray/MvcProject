@@ -26,7 +26,7 @@ namespace MvcProject.Models
 				Quinta		  = true,
 				Sexta 		  = true,
 				Sabado		  = false,
-				DataInicio 	  = Convert.ToDateTime("01/01/2019 19:00"),
+				DataInicio 	  = Convert.ToDateTime("01/01/2019"),
 				CaminhoImagem = "../images/gastronomia.jpg",
 				CaminhoVideo  = "https://www.youtube.com/embed/m6QM_IPlK-I"
 			});
@@ -106,9 +106,19 @@ namespace MvcProject.Models
 			return this.listaCursos.FirstOrDefault(curso => curso.Id == Id);
 		}
 
-		public CursoModel getUsuario(int Id) {
-			return listaCursos.SingleOrDefault(e => e.Id == Id);
-		}
+	}
 
+	public class Alunos
+	{
+		public List<AlunoModel> listaAlunos = new List<AlunoModel>();
+
+		public Alunos() {
+			listaAlunos.Add( new AlunoModel {
+				Id 			   = 1,
+				Nome 		   = "Carlos Andrade",
+				Email 		   = "carlosandrade@gmail.com",
+				DataNascimento = Convert.ToDateTime("01/01/1990")
+			});
+		}
 	}
 }

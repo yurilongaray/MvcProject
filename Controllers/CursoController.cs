@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
 using MvcProject.Models;
+using MvcProject.ViewModels;
 
 namespace MvcProject.Controllers
 {
@@ -14,35 +15,77 @@ namespace MvcProject.Controllers
     public class CursoController : Controller
 	{
 
-		private static Cursos db = new Cursos();
+		private static Cursos dbcursos = new Cursos();
+		private static Alunos dbalunos = new Alunos();
 
 		public IActionResult Index()
 		{
-            return View( db.listaCursos.ToList() );
+            return View(dbcursos.listaCursos.ToList());
         }
 
 		public IActionResult Detalhe(int id)
 		{
-			var curso = db.GetCurso(id);
+			var curso = dbcursos.GetCurso(id);
 			if (curso == null)
 			{
 				// TODO: Adicionar erro no model
 			}
 
+			//Retorna um model:
 			return View(curso);
 		}
 
-		public IActionResult Inscrever(AlunoModel aluno)
+		[HttpGet]
+		public IActionResult Inscrever(int id)
 		{
-			if (ModelState.IsValid)
+
+			var curso = dbcursos.GetCurso(id);
+
+			if (curso == null)
 			{
-				// busca na base se o aluno ja ta em algum curso
-				// se tiver
-				ModelState.AddModelError("", "ALUNO JA INSCRITO EM ALGUM CURSO")
-				// senao, faz o que tem que fazer
+				// TODO: Adicionar erro no model
 			}
-			return View(curso);
+
+			/*
+			// converte o model pra view model
+			var vm = new AlunoCursoVM();
+			{
+				Nome = curso.Nome
+			}
+			*/
+
+			var vm = new AlunoCursoVM();
+
+			vm.NomeCurso = curso.Nome;
+			return View(vm);
 		}
+
+		/*
+		[HttpPost]
+		public IActionResult Inscrever(AlunoCursoVM vm)
+		{
+			if (ModelState.IsValid) {
+
+				AlunoModel aluno = vm.Aluno;
+
+				aluno.Curso = dbcursos.listaCursos.Where(m => m.Id == aluno.Curso.Id.FirstOrDefault());
+
+				//Adiciona o aluno no banco
+                dbalunos.Alunos.Add(aluno);
+
+                //Salva as informações no banco
+                dbalunos.SaveChanges();
+
+				this.FlashInfo(aluno.Nome + ", Você for matriculado com sucesso.");
+
+                //Retorna para a página Index
+                return RedirectToAction("Index");
+
+			}
+
+		}
+		*/
 
 	}
+
 }

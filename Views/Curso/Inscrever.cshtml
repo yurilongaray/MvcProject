@@ -1,0 +1,41 @@
+@model MvcProject.ViewModels.AlunoCursoVM
+
+@{
+    ViewData["Title"] = "Realizar Inscriчуo";
+}
+
+<h2>Realizar Inscriчуo para o curso de @Model.NomeCurso</h2>
+
+<div class="row">
+	@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		@Html.Partial("_Form", Model)
+	}
+</div>
+
+<!--
+<form method="post">
+а а<fieldset>
+а а а <h3>Realizar Inscriчуo para o curso de @Model.NomeCurso</h3>
+а а а <div>
+а а а а а<label for="Nome">Nome Completo:</label>
+а а а а а<input type="text" name="Nome" value="" />
+а а а а а@Html.ValidationMessage("Nome")
+а а а </div>
+а а а <div>
+а а а а а<label for="Email">Email:</label>
+а а а а а<input type="text" name="Email" value="" />
+а а а а а@Html.ValidationMessage("Email")
+а а а </div>
+а а а <div>
+а а а а а<label for="DataNascimento">Data de Nascimento:</label>
+а а а а а<input type="text" name="DataNascimento" value="" />
+а а а а а@Html.ValidationMessage("DataNascimento")
+а а а </div>
+а а а <div>
+а а а а а<label>&nbsp;</label>
+а а а а а<input type="submit" value="Submit" class="submit" />
+а а а</div>
+	</fieldset>
+</form>
+-->

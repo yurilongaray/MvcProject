@@ -1,0 +1,24 @@
+@model MvcProject.ViewModels.AlunoCursoVM
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger" role="alert">
+        @Html.ValidationSummary()
+    </div>
+}
+
+<div class="col-md-6">
+
+	<!-- Verificar o pq não são preenchidos -->
+    @Html.HiddenFor(m => m.Curso.Id)
+    @Html.HiddenFor(m => m.Curso.Nome)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Aluno.Nome)
+        @Html.TextBoxFor(m => m.Aluno.Nome, new { @class = "form-control" })
+        <span id="helpBlock2" class="help-block">
+            @Html.ValidationMessageFor(m => m.Aluno.Nome)
+        </span>
+    </div>
+
+</div>
