@@ -5,7 +5,7 @@
 }
 
 
-<h1>Cursos Disponíveis</h1>
+<h1>Cursos DisponÃ­veis</h1>
 
 <!--
 <table>
@@ -14,8 +14,8 @@
 		<th>Nome</th>
 		<th>Carga Horaria</th>
 		<th>Caminho Imagem</th>
-		<th>Caminho Vídeo</th>
-		<th>Data Início</th>
+		<th>Caminho VÃ­deo</th>
+		<th>Data InÃ­cio</th>
 		<th>Detalhes</th>
 	</tr>
 	@foreach(var curso in Model) {
@@ -40,7 +40,7 @@
 			<img class = "imagem-curso" src="@curso.CaminhoImagem"/>
 			<div class="col-md-12 botoes-cursos">
 				<a href="/curso/detalhe/@curso.Id"><button type="button" class="btn btn-light">Detalhes</button></a>
-				<a href="/curso/inscrever/@curso.Id"><button type="button" class="btn btn-info">Inscrição</button></a>
+				<a href="/curso/inscrever/@curso.Id"><button type="button" class="btn btn-info">InscriÃ§Ã£o</button></a>
 			</div>
 		</div>
 	}
