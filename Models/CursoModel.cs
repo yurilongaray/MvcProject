@@ -26,8 +26,8 @@ namespace MvcProject.Models
 		public bool Sexta   { get; set; }
 		public bool Sabado  { get; set; }
 
+		[DataType(DataType.Date)]
 		public DateTime DataInicio { get; set; }
-
 	}
 
 }

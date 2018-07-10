@@ -19,23 +19,10 @@ namespace MvcProject.Models
 		de Id ou termina com Id (Ex: ProdutoId) ele automaticamente
 		usa essa propriedade como chave primária auto-incrementada
         */
-		public int Id { get; set; }
-
-		[DisplayName("Nome Completo:")]
-		[Required(ErrorMessage = "Nome não informado")]
-		public String Nome { get; set; }
-
-
-		[DisplayName("Email:")]
-		[Required(ErrorMessage="Informe o Email")]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Email inválido.")]
-        public string Email { get; set; }
-
-
-		[DisplayName("Data de Nascimento:")]
-		[Required(ErrorMessage="Informe uma data no formato dd/mm/aaaa ")]
-        [DataType(DataType.Date)]
-        public DateTime DataNascimento { get; set; }
+		public int Id 					{ get; set; }
+		public String Nome 				{ get; set; }
+        public string Email 			{ get; set; }
+        public DateTime DataNascimento  { get; set; }
 
 	}
 

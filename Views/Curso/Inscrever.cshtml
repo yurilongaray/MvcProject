@@ -4,52 +4,44 @@
     ViewData["Title"] = "Realizar Inscrição";
 }
 
-<h2>Realizar inscrição para o curso de @Model.NomeCurso</h2>
+<h2>@Model.NomeCurso</h2>
 
 <div class="row">
 
-	@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+	@using (Html.BeginForm("Inscrever", "Curso", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
-		<!--
-		@if (!ViewData.ModelState.IsValid)
-		{
-			<div class="alert alert-danger" role="alert">
-				@Html.ValidationSummary()
-			</div>
-		}
-		-->
 
 		<div class="col-md-4">
 
 			@Html.HiddenFor(m => m.IdCurso)
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Aluno.Nome)
-				@Html.TextBoxFor(m => m.Aluno.Nome, new { @class = "form-control" })
+				@Html.LabelFor(m => m.NomeAluno)
+				@Html.TextBoxFor(m => m.NomeAluno, new { @class = "form-control"})
 				<span class="help-block">
-					@Html.ValidationMessageFor(m => m.Aluno.Nome)
+					@Html.ValidationMessageFor(m => m.NomeAluno)
 				</span>
 			</div>
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Aluno.Email)
-				@Html.TextBoxFor(m => m.Aluno.Email, new { @class = "form-control" } )
+				@Html.LabelFor(m => m.EmailAluno)
+				@Html.TextBoxFor(m => m.EmailAluno, new { @class = "form-control" } )
 				<span class="help-block">
-					@Html.ValidationMessageFor(m => m.Aluno.Email)
+					@Html.ValidationMessageFor(m => m.EmailAluno)
 				</span>
 			</div>
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Aluno.DataNascimento)
-				@Html.TextBoxFor(m => m.Aluno.DataNascimento, new { @class = "form-control" })
+				@Html.LabelFor(m => m.DataNascimentoAluno)
+				@Html.TextBoxFor(m => m.DataNascimentoAluno, new { @class = "form-control", maxlength = 10 })
 				<span class="help-block">
-					@Html.ValidationMessageFor(m => m.Aluno.DataNascimento)
+					@Html.ValidationMessageFor(m => m.DataNascimentoAluno)
 				</span>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Confirmar</button>
 
-			<a href="/curso/detalhe/@Model.IdCurso" style="float: right"><button type="button" class="btn btn-danger" >Cancelar</button></a>
+			<a href="/curso/index" style="float: right"><button type="button" class="btn btn-danger" >Cancelar</button></a>
 
 		</div>
 	}

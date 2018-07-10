@@ -86,6 +86,7 @@ namespace MvcProject.Controllers
 		[HttpPost]
 		public IActionResult Inscrever(AlunoCursoVM vm)
 		{
+
 			if (ModelState.IsValid)
 			{
 				AlunoModel aluno = vm.Aluno;

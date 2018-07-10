@@ -33,4 +33,4 @@ C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\MvcProject.pdb
 C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\MvcProject.csproj.CopyComplete
 C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Curso\detalhe.g.cshtml.cs
 C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Curso\Inscrever.g.cshtml.cs
-C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Curso\_Form.g.cshtml.cs
+C:\Users\yuri.caldeira\Desktop\MvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Curso\Inscreve2r.g.cshtml.cs

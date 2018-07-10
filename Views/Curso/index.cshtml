@@ -5,33 +5,8 @@
 }
 
 
-<h1>Cursos Disponíveis</h1>
+<h1 style="text-align: center">Cursos Disponíveis</h1>
 
-<!--
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Nome</th>
-		<th>Carga Horaria</th>
-		<th>Caminho Imagem</th>
-		<th>Caminho Vídeo</th>
-		<th>Data Início</th>
-		<th>Detalhes</th>
-	</tr>
-	@foreach(var curso in Model) {
-		<tr>
-			<td>@curso.Id</td>
-			<td>@curso.Nome</td>
-			<td>@curso.CargaHoraria</td>
-			<td>@curso.CaminhoImagem</td>
-			<td>@curso.CaminhoVideo</td>
-			<td>@Html.DisplayFor(cursoItem => curso.DataInicio)</td>
-			<td>@Html.ActionLink("Detalhes", "Detalhe", new { id = @curso.Id })</td>
-			<td><a href="/curso/detalhe/@curso.Id">teste</a></td>
-		</tr>
-	}
-</table>
--->
 <div class="row">
 	@foreach(var curso in Model)
 	{
