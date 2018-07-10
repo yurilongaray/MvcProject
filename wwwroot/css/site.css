@@ -57,3 +57,7 @@ a.none {
 	margin-top: 20px;
 	text-align: center;
 }
+
+.help-block {
+	color: red;
+}

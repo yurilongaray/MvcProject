@@ -1,15 +1,58 @@
 @model MvcProject.ViewModels.AlunoCursoVM
 
 @{
-    ViewData["Title"] = "Realizar Inscrição";
+    ViewData["Title"] = "Realizar InscriÃ§Ã£o";
 }
 
-<h2>Realizar Inscrição para o curso de @Model.NomeCurso</h2>
+<h2>Realizar InscriÃ§Ã£o para o curso de @Model.NomeCurso</h2>
 
 <div class="row">
+
 	@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
-		@Html.Partial("_Form", Model)
+		<!--
+		@if (!ViewData.ModelState.IsValid)
+		{
+			<div class="alert alert-danger" role="alert">
+				@Html.ValidationSummary()
+			</div>
+		}
+		-->
+
+		<div class="col-md-4">
+
+			@Html.HiddenFor(m => m.IdCurso)
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Aluno.Nome)
+				@Html.TextBoxFor(m => m.Aluno.Nome, new { @class = "form-control" })
+				<span class="help-block">
+					@Html.ValidationMessageFor(m => m.Aluno.Nome)
+				</span>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Aluno.Email)
+				@Html.TextBoxFor(m => m.Aluno.Email, new { @class = "form-control" } )
+				<span class="help-block">
+					@Html.ValidationMessageFor(m => m.Aluno.Email)
+				</span>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Aluno.DataNascimento)
+				@Html.TextBoxFor(m => m.Aluno.DataNascimento, new { @class = "form-control" })
+				<span class="help-block">
+					@Html.ValidationMessageFor(m => m.Aluno.DataNascimento)
+				</span>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Confirmar</button>
+
+			<a href="/curso/detalhe/@Model.IdCurso" style="float: right"><button type="button" class="btn btn-danger" >Cancelar</button></a>
+
+		</div>
 	}
+
 </div>
 
