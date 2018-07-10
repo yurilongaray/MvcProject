@@ -23,6 +23,7 @@ namespace MvcProject.Models
 		public String Nome 				{ get; set; }
         public string Email 			{ get; set; }
         public DateTime DataNascimento  { get; set; }
+		public int IdCurso				{ get; set; }
 
 	}
 

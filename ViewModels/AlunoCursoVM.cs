@@ -16,7 +16,7 @@ namespace MvcProject.ViewModels
 		public string NomeCurso { get; set; }
 
 		//Aluno
-		public AlunoModel Aluno { get; set; }
+		//public AlunoModel Aluno { get; set; }
 
 		[DisplayName("Nome Completo:")]
 		[Required(ErrorMessage = "Nome não informado")]
@@ -28,10 +28,10 @@ namespace MvcProject.ViewModels
         public string EmailAluno { get; set; }
 
 		[DisplayName("Data de Nascimento:")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "FUDEU")]
 		[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
 		[Required(ErrorMessage="Informe uma data")]
-        public DateTime? DataNascimentoAluno { get; set; }
+        public DateTime DataNascimentoAluno { get; set; }
 
 	}
 }

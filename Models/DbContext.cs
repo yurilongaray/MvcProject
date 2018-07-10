@@ -117,7 +117,8 @@ namespace MvcProject.Models
 				Id 			   = 1,
 				Nome 		   = "Carlos Andrade",
 				Email 		   = "carlosandrade@gmail.com",
-				DataNascimento = Convert.ToDateTime("01/01/1990")
+				DataNascimento = Convert.ToDateTime("01/01/1990"),
+				IdCurso 	   = 1
 			});
 		}
 	}

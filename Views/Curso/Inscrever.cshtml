@@ -4,6 +4,13 @@
     ViewData["Title"] = "Realizar Inscrição";
 }
 
+@if (ViewData["Message"] != null)
+{
+	<script>
+		alert('@ViewData["Message"]');
+	</script>
+}
+
 <h2>@Model.NomeCurso</h2>
 
 <div class="row">

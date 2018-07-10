@@ -89,27 +89,36 @@ namespace MvcProject.Controllers
 
 			if (ModelState.IsValid)
 			{
-				AlunoModel aluno = vm.Aluno;
 
-				var anoNascimento = aluno.DataNascimento.Year;
-				var anoAtual	  = DateTime.Now.Year;
-				var totalIdade 	  = anoAtual - anoNascimento;
+				var anoNascimento = vm.DataNascimentoAluno.Year;
+				var anoAtual = DateTime.Now.Year;
+				var idade 	 = anoAtual - anoNascimento;
 
-				if (totalIdade < 18 )
+				if (idade < 18 )
 				{
-					ViewData["ErroNascimento"] = "O aluno precisa ser maior de 18 anos";
-					return View(vm);
+					ViewData["Message"] = "O aluno precisa ser maior de 18 anos";
+					return Inscrever(vm.IdCurso);
+				} else
+				{
+					//Adiciona o aluno no banco
+					dbalunos.listaAlunos.Add(new AlunoModel {
+						Nome  = vm.NomeAluno,
+						Email = vm.EmailAluno,
+						DataNascimento = vm.DataNascimentoAluno,
+						IdCurso = vm.IdCurso
+					});
+
+					ViewData["Message"] = "Inscrição efetuada com sucesso!";
+					return Inscrever(vm.IdCurso);
+					//Retorna para a página Index
+					// return RedirectToAction("Index");
 				}
 
-				//Adiciona o aluno no banco
-                dbalunos.listaAlunos.Add(aluno);
-
-                //Retorna para a página Index
-                return RedirectToAction("Index");
 
 			} else
 			{
-				return View(vm);
+				//Para que o nome do curso não desapareça
+				return Inscrever(vm.IdCurso);
 			}
 
 		}
