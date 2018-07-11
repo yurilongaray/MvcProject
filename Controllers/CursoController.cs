@@ -91,8 +91,8 @@ namespace MvcProject.Controllers
 			{
 
 				var anoNascimento = vm.DataNascimentoAluno.Year;
-				var anoAtual = DateTime.Now.Year;
-				var idade 	 = anoAtual - anoNascimento;
+				var anoAtual 	  = DateTime.Now.Year;
+				var idade 	 	  = anoAtual - anoNascimento;
 
 				if (idade < 18 )
 				{
@@ -102,16 +102,16 @@ namespace MvcProject.Controllers
 				{
 					//Adiciona o aluno no banco
 					dbalunos.listaAlunos.Add(new AlunoModel {
-						Nome  = vm.NomeAluno,
-						Email = vm.EmailAluno,
-						DataNascimento = vm.DataNascimentoAluno,
-						IdCurso = vm.IdCurso
+						Nome  			= vm.NomeAluno,
+						Email 			= vm.EmailAluno,
+						DataNascimento 	= vm.DataNascimentoAluno,
+						IdCurso 		= vm.IdCurso
 					});
 
-					ViewData["Message"] = "Inscrição efetuada com sucesso!";
-					return Inscrever(vm.IdCurso);
-					//Retorna para a página Index
-					// return RedirectToAction("Index");
+					ViewData["Message"] = "Cadastro realizado com sucesso!";
+
+					//Redireciona para a página Index
+					return RedirectToAction("Index");
 				}
 
 

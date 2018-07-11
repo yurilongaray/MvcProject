@@ -28,9 +28,7 @@ namespace MvcProject.ViewModels
         public string EmailAluno { get; set; }
 
 		[DisplayName("Data de Nascimento:")]
-        [DataType(DataType.Date, ErrorMessage = "FUDEU")]
 		[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-		[Required(ErrorMessage="Informe uma data")]
         public DateTime DataNascimentoAluno { get; set; }
 
 	}
